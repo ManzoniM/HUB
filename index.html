@@ -1,56 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Digital Miguel</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
     <style>
         @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
-        
+
         @keyframes flicker {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
         }
-        
+
         @keyframes pulse {
-            0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6; }
-            50% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0073e6, 0 0 40px #0073e6; }
+
+            0%,
+            100% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6;
+            }
+
+            50% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0073e6, 0 0 40px #0073e6;
+            }
         }
-        
+
         @keyframes neonGlow {
-            0% { box-shadow: 0 0 5px rgba(0, 115, 230, 0.5), 0 0 10px rgba(0, 115, 230, 0.5); }
-            100% { box-shadow: 0 0 10px rgba(0, 115, 230, 0.8), 0 0 20px rgba(0, 115, 230, 0.8); }
+            0% {
+                box-shadow: 0 0 5px rgba(0, 115, 230, 0.5), 0 0 10px rgba(0, 115, 230, 0.5);
+            }
+
+            100% {
+                box-shadow: 0 0 10px rgba(0, 115, 230, 0.8), 0 0 20px rgba(0, 115, 230, 0.8);
+            }
         }
-        
+
         .gradient-bg {
             background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
         }
-        
+
         .title-glow {
             animation: pulse 2s infinite, flicker 5s infinite;
             font-family: 'Orbitron', sans-serif;
             color: #fff;
         }
-        
+
         .nav-button {
             transition: all 0.3s ease;
             font-family: 'Audiowide', cursive;
             position: relative;
             overflow: hidden;
         }
-        
+
         .nav-button:hover {
             transform: translateY(-3px) scale(1.03);
         }
-        
+
         .nav-button:before {
             content: '';
             position: absolute;
@@ -61,27 +91,27 @@
             background: linear-gradient(90deg, transparent, rgba(0, 115, 230, 0.4), transparent);
             transition: 0.5s;
         }
-        
+
         .nav-button:hover:before {
             left: 100%;
         }
-        
+
         .social-icon {
             transition: all 0.3s ease;
         }
-        
+
         .social-icon:hover {
             transform: scale(1.2);
             filter: drop-shadow(0 0 5px rgba(0, 115, 230, 0.8));
         }
-        
+
         .particle {
             position: absolute;
             background: rgba(255, 255, 255, 0.5);
             border-radius: 50%;
             pointer-events: none;
         }
-        
+
         @media (max-width: 640px) {
             .nav-grid {
                 grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -89,104 +119,74 @@
         }
     </style>
 </head>
-<body class="gradient-bg min-h-screen flex flex-col items-center justify-start pt-12 pb-8 px-4 text-white overflow-x-hidden relative">
-    <!-- Partícula flutuantes -->
+
+<body
+    class="gradient-bg min-h-screen flex flex-col justify-between items-center pt-12 pb-8 px-4 text-white overflow-x-hidden relative">
+    <!-- Partículas flutuantes -->
     <div id="particles-container" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
-    
-    <div class="max-w-4xl w-full mx-auto text-center z-10">
+
+    <div class="max-w-4xl w-full mx-auto text-center z-10 flex flex-col flex-grow">
         <h1 class="title-glow text-4xl md:text-6xl mb-4">PORTAL DO MIGUEL</h1>
         <h2 class="text-xl md:text-2xl font-['Audiowide'] text-blue-300 mb-12 animate-flicker">
-            Explore o universo digital <span class="text-yellow-300">|</span> Administrador <span class="text-yellow-300">|</span> Desenvolvedor de sites
+            Programando interfaces <span class="text-yellow-300">|</span> liderando estratégias
         </h2>
-        
+
         <div class="nav-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-16">
             <!-- Botão 1 -->
-            <a href="https://manzonim.github.io/Senac/" class="nav-button bg-gray-900 bg-opacity-60 border border-blue-400 rounded-lg p-4 flex flex-col items-center justify-center hover:border-blue-300 hover:bg-opacity-80">
+            <a href="https://manzonim.github.io/Senac/"
+                class="nav-button bg-gray-900 bg-opacity-60 border border-blue-400 rounded-lg p-4 flex flex-col items-center justify-center hover:border-blue-300 hover:bg-opacity-80">
                 <span class="text-3xl mb-2">👨‍💻</span>
                 <span class="text-lg">Portfólio</span>
             </a>
 
-            
-            <!-- Botão 2 
-            <a href="#" class="nav-button bg-gray-900 bg-opacity-60 border border-green-400 rounded-lg p-4 flex flex-col items-center justify-center hover:border-green-300 hover:bg-opacity-80">
-                <span class="text-3xl mb-2">🛒</span>
-                <span class="text-lg">Loja de Totens</span>
-            </a>
-            
-             Botão 3 
-            <a href="#" class="nav-button bg-gray-900 bg-opacity-60 border border-purple-400 rounded-lg p-4 flex flex-col items-center justify-center hover:border-purple-300 hover:bg-opacity-80">
-                <span class="text-3xl mb-2">🤖</span>
-                <span class="text-lg">Experimentos IA</span>
-            </a>
-            
-             Botão 4 
-            <a href="#" class="nav-button bg-gray-900 bg-opacity-60 border border-yellow-400 rounded-lg p-4 flex flex-col items-center justify-center hover:border-yellow-300 hover:bg-opacity-80">
-                <span class="text-3xl mb-2">🎮</span>
-                <span class="text-lg">Projetos GameDev</span>
-            </a>
-            
-            Botão 5
-            <a href="#" class="nav-button bg-gray-900 bg-opacity-60 border border-red-400 rounded-lg p-4 flex flex-col items-center justify-center hover:border-red-300 hover:bg-opacity-80">
-                <span class="text-3xl mb-2">📝</span>
-                <span class="text-lg">Blog Técnico</span>
-            </a>
-            
-            Botão 6
-            <a href="#" class="nav-button bg-gray-900 bg-opacity-60 border border-pink-400 rounded-lg p-4 flex flex-col items-center justify-center hover:border-pink-300 hover:bg-opacity-80">
-                <span class="text-3xl mb-2">📱</span>
-                <span class="text-lg">Apps Mobile</span>
-            </a>
-            
-             Botão 7 
-            <a href="#" class="nav-button bg-gray-900 bg-opacity-60 border border-teal-400 rounded-lg p-4 flex flex-col items-center justify-center hover:border-teal-300 hover:bg-opacity-80">
-                <span class="text-3xl mb-2">🎨</span>
-                <span class="text-lg">Arte Digital</span>
-            </a>
-            
-            Botão 8
-            <a href="#" class="nav-button bg-gray-900 bg-opacity-60 border border-indigo-400 rounded-lg p-4 flex flex-col items-center justify-center hover:border-indigo-300 hover:bg-opacity-80">
-                <span class="text-3xl mb-2">📊</span>
-                <span class="text-lg">Visualizações</span>
-            </a>
+            <!-- Mais botões serão colocados aqui -->
         </div>
-         Fim dos botões -->
-        <footer class="mt-12 text-sm text-gray-400">
-            <div class="flex justify-center space-x-4 mb-4">
-                <a href="#" class="social-icon">🐦</a>
-                <a href="#" class="social-icon">💻</a>
-                <a href="#" class="social-icon">📷</a>
-            </div>
-            <p class="font-['Audiowide']">MANZONIM © 2025 | Todos os direitos cósmicos reservados</p>
-        </footer>
-    </div>
 
-    <script>
-        // Criar partículas flutuantes
-        document.addEventListener('DOMContentLoaded', () => {
-            const particlesContainer = document.getElementById('particles-container');
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Tamanho aleatório entre 1 e 3px
-                const size = Math.random() * 2 + 1;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                
-                // Posição aleatória
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                
-                // Animação aleatória
-                const duration = Math.random() * 20 + 10;
-                const delay = Math.random() * 5;
-                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
-                
-                // Adicione estilos para a animação de flutuação
-                const style = document.createElement('style');
-                style.textContent = `
+        <footer class="mt-auto text-sm text-gray-400">
+            <div class="flex justify-center space-x-10 mb-4">
+                <a href="https://www.instagram.com/_manzonimiguel_/"
+                    class="social-icon flex flex-col items-center text-2xl hover:text-white transition">
+                    <span>📸</span>
+                    <span class="text-xs mt-1">Instagram</span>
+                </a>
+                <a href=https://www.linkedin.com/in/miguel-luiz-manzoni-01a799278/"
+                    class="social-icon flex flex-col items-center text-2xl hover:text-white transition">
+                    <span>💼</span>
+                    <span class="text-xs mt-1">LinkedIn</span>
+                </a>
+                <a href="https://github.com/ManzoniM"
+                    class="social-icon flex flex-col items-center text-2xl hover:text-white transition">
+                    <span>🐙</span>
+                    <span class="text-xs mt-1">GitHub</span>
+                </a>
+            </div>
+
+            <p class="font-['Audiowide'] text-center text-gray-400">MANZONIM © 2025 | Todos os direitos cósmicos
+                reservados</p>
+        </footer>
+
+        <script>
+            // Criar partículas flutuantes
+            document.addEventListener('DOMContentLoaded', () => {
+                const particlesContainer = document.getElementById('particles-container');
+                const particleCount = 30;
+
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+
+                    const size = Math.random() * 2 + 1;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.left = `${Math.random() * 100}%`;
+                    particle.style.top = `${Math.random() * 100}%`;
+
+                    const duration = Math.random() * 20 + 10;
+                    const delay = Math.random() * 5;
+                    particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+
+                    const style = document.createElement('style');
+                    style.textContent = `
                     @keyframes float {
                         0%, 100% { transform: translate(0, 0); opacity: 0.3; }
                         25% { transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 50 - 25}px); opacity: 0.6; }
@@ -194,11 +194,11 @@
                         75% { transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 50 - 25}px); opacity: 0.6; }
                     }
                 `;
-                document.head.appendChild(style);
-                
-                particlesContainer.appendChild(particle);
-            }
-        });
-    </script>
+                    document.head.appendChild(style);
+                    particlesContainer.appendChild(particle);
+                }
+            });
+        </script>
 </body>
+
 </html>
